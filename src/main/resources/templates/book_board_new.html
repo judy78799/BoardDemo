@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>도서 게시판 등록</title>
+    <link rel="stylesheet" th:href="@{/css/book_board_new.css}">
+</head>
+<body>
+<div class="form-container">
+    <h2>도서 등록</h2>
+    <form method="post" action="/board_list/new">
+        <label for="title">제목</label>
+        <input type="text" id="title" name="title" />
+
+        <label for="author">저자</label>
+        <input type="text" id="author" name="author"/>
+
+        <label for="isbn">ISBN</label>
+        <input type="text" id="isbn" name="isbn" />
+
+        <label for="published_date">출판일</label>
+        <input type="text" id="published_date" name="published_date" />
+
+        <button type="submit">등록</button>
+    </form>
+</div>
+</body>
+</html>

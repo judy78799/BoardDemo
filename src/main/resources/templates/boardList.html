@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>도서 게시판</title>
+    <link rel="stylesheet" th:href="@{/css/boardList.css}">
+</head>
+<body>
+<h1>도서 게시판</h1>
+<a href="/board_list/new" class="add-btn">도서 추가</a>
+<table>
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>저자</th>
+        <th>출판일</th>
+        <th>ISBN</th>
+        <th>비고</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${bookList}">
+<!--        th:text="${#numbers.formatInteger(id, 3)}"-->
+        <td th:text="${book.id}" >1</td>
+        <td th:text="${book.title}">자바의 정석</td>
+        <td th:text="${book.author}">남궁 성</td>
+        <td th:text="${book.published_date}">2020-01-15</td>
+        <td th:text="${book.isbn}">9788994492032</td>
+        <td class="actions">
+            <a th:href="@{/board_list/edit(id=${book.id})}" class="edit-btn">수정</a>
+            <a href="/board_list/delete" class="delete-btn">삭제</a>
+        </td>
+    </tr>
+    <!-- 여기에 동적으로 책 목록이 추가될 수 있음 -->
+    </tbody>
+</table>
+
+</body>
+</html>

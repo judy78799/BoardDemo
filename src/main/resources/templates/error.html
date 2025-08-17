@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Something went wrong</title>
+  <link rel="stylesheet" th:href="@{/css/error.css}">
+</head>
+<body>
+<div class="container">
+  <h1>😢 Something went wrong</h1>
+  <p>An unexpected error has occurred. Please try again later.</p>
+
+  <!-- 로그 출력 영역 -->
+  <div class="stacktrace">
+    <pre th:text="${error}">No stack trace available</pre>
+    <pre th:text="${stacktrace}">No stack trace available</pre>
+  </div>
+
+  <a href="/" class="btn">Go Back Home</a>
+</div>
+</body>
+</html>
